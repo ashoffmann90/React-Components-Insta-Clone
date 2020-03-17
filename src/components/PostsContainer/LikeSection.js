@@ -7,7 +7,7 @@ const LikeSection = props => {
   console.log(props.likes);
   const [likes, setLikes] = useState(props.likes)
 
-  const likesCount = () => {
+  const handleClick = () => {
     setLikes(likes + 1)
   }
   return (
@@ -17,13 +17,13 @@ const LikeSection = props => {
       key="likes-icons-container"
     >
       <div className="like-section-wrapper">
-        <i className="far fa-heart" />
+        <i className="far fa-heart" onClick={handleClick}/>
       </div>
       <div className="like-section-wrapper">
         <i className="far fa-comment" />
       </div>
     </div>
-    <p className="like-number">
+    <p className="like-number"> {likes}
       
       likes</p>
 </div>
